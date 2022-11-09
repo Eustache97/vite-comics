@@ -3,7 +3,7 @@ export default {
     name: "AppHeader",
     data() {
         return {
-            links: [
+            menu: [
                 {
                     title: "Characters",
                     href: "/Characters",
@@ -62,17 +62,21 @@ export default {
 
 <template>
  <header>
-    <div class="logo">
-        <img src="../assets/img/dc-logo.png" alt="logo-dc_comics">
-    </div>
-    <div class="nav">
-        <ul>
-            <li
-            v-for="(link, index) in links" :key="index">
-                <a :href="link.href"
-                :class="{'active' : link.active}"> {{link.title}} </a>
-            </li>
-        </ul>
+    <div class="container">
+        <div class="header-div">
+            <div class="logo">
+                <img src="../assets/img/dc-logo.png" alt="logo-dc_comics">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li
+                    v-for="(link, index) in menu" :key="index">
+                        <a :href="link.href"
+                        :class="{'active' : link.active}"> {{link.title}} </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
  </header>  
 </template>
@@ -80,13 +84,20 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as*;
 header{
-    height: 100px;
-    width: 100%;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
     background-color: white;
-    padding:  1em 0;
+    .container{
+        .header-div{
+            height: 100px;
+            width: 100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            padding:  1em 0;
+        }
+        
+    }
+    
     .logo{
         height: 100%;
         img{
@@ -96,7 +107,6 @@ header{
     .nav{
         ul{
             display: flex;
-            justify-content: space-around;
             gap: 1em; 
             text-transform: uppercase;
             font-size: .8rem;
