@@ -5,7 +5,9 @@ export default {
 </script>
 
 <template>
- <h2> Content goes here </h2>   
+ <main>
+    
+ </main>   
 </template>
 
 <style lang="scss" scoped>
