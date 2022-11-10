@@ -12,7 +12,7 @@ export default {
                 {
                     title: "Comics",
                     href: "/Comics",
-                    active: false
+                    active: true
                 },
                 {
                     title: "Movies",
@@ -122,6 +122,7 @@ header{
                     &.active{
                         color: $primary-color;
                         border-bottom: 3px solid $primary-color;
+                        margin-bottom: .2rem;
                     }
                 }
             }
