@@ -134,30 +134,46 @@ export default {
 </script>
 
 <template>
- <footer>
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-links row">
-                <div class="links-list col-3"
-                v-for="(link, index) in links" :key="index">
-                    <h2> {{link.title}} </h2>
-                    <ul>
-                        <li
-                        v-for="(content,position) in links[index].contentLink" :key="position">
-                            <a :href="content.href"> {{content.name}} </a>
-                        </li>
-                    </ul>
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-links row">
+                    <div class="links-list col-3"
+                    v-for="(link, index) in links" :key="index">
+                        <h2> {{link.title}} </h2>
+                        <ul>
+                            <li
+                            v-for="(content,position) in links[index].contentLink" :key="position">
+                                <a :href="content.href"> {{content.name}} </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-logo">
                 </div>
             </div>
-            <div class="footer-logo">
+            
+        </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="div-footer-bottom">
+               <button> Signup now!</button>
+                <div class="socials">
+                    <span> follow us</span>
+                    <img src="../assets/img/footer-facebook.png" alt="">
+                    <img src="../assets/img/footer-twitter.png" alt="">
+                    <img src="../assets/img/footer-youtube.png" alt="">
+                    <img src="../assets/img/footer-pinterest.png" alt="">
+                    <img src="../assets/img/footer-periscope.png" alt="">
+                </div> 
             </div>
         </div>
-        <div class="footer-bottom"></div>
     </div> 
  </footer>   
 </template>
 
 <style lang="scss" scoped>
+@use "../styles/partials/variables"as*;
 footer{
     background-image: url("../assets/img/footer-bg.jpg");
     background-size: cover;
@@ -198,6 +214,47 @@ footer{
             background-size: cover;
             background-position: center;
         }
+        
+    }
+    .footer-bottom{
+        background-color: $footer_bottom-color;
+        padding: .5em 0;
+        .container{
+            .div-footer-bottom{
+                width: 100%;
+                height: 50px;
+                display:flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: .5em;
+                button{
+                    background-color: unset;
+                    border: 2px solid $primary-color;
+                    border-radius: unset;
+                    padding: .5rem 1rem;
+                    color: $primary-color;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+                .socials{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    span{
+                        color: $primary-color;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        display: inline-block;
+                        margin-right: 2rem;
+                    }
+                    img{
+                        margin-right: .5em;
+                    }
+                }
+            
+            }
+        }
+        
         
     }
 }
